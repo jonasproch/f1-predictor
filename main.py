@@ -7,7 +7,7 @@ if __name__ == "__main__":
     config = load_config()
 
     # Enable caching
-    f1.Cache.enable_cache(config.get("App", "temp_folder"))
+    f1.Cache.enable_cache(config.get("App", "cache_folder"))
 
     # Years to gather data from
     past_years = int(config.get("Prediction", "past_years"))
