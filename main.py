@@ -1,6 +1,7 @@
 import fastf1 as f1
 from datetime import datetime as dt
 from helpers.load_config import load_config
+from helpers.collect_past_data import collect_past_data
 
 if __name__ == "__main__":
     # Load config
@@ -16,9 +17,4 @@ if __name__ == "__main__":
 
     grand_prix = "Miami Grand Prix"
 
-    for year in years:
-        schedule = f1.get_event_schedule(year)
-        event = schedule.get_event_by_name(grand_prix)
-        race = event.get_race()
-        race.load()
-        print(race.results)
+    past_data = collect_past_data(years, grand_prix)
